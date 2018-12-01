@@ -1,0 +1,2 @@
+add a single file with functions dedicated to error handling and mitigation
+add a single file with function dedicated to logging
