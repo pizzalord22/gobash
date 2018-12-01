@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/fatih/color"
 	"io"
+	"io/ioutil"
 	"os"
 )
 
@@ -80,4 +81,27 @@ func readBytes(file *os.File) (r []byte, e error) {
 		}
 	}
 	return r, nil
+}
+
+// shows all files and directory's in a path
+func showContent(dir *string) error {
+	files, err := ioutil.ReadDir(*dir)
+	fmt.Println("gobash> showing files")
+	for _, v := range files {
+		if v.IsDir() {
+			color.Blue("%v", v.Name())
+		} else {
+			color.Green("%v", v.Name())
+		}
+	}
+	return err
+}
+
+// checks if a given file exists, file may be removed or changed between checking and returning
+func checkExistence(s string, dir *string) bool {
+	fileInfo, err := os.Stat(*dir + "/" + s)
+	if err != nil && fileInfo.IsDir() {
+		return false
+	}
+	return true
 }

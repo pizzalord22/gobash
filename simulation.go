@@ -3,9 +3,7 @@ package main
 import (
 	"fmt"
 	"github.com/fatih/color"
-	"io/ioutil"
 	"log"
-	"os"
 	"strings"
 )
 
@@ -17,20 +15,6 @@ func command(s string, e error) []string {
 	}
 	s = strings.TrimSpace(s)
 	return strings.Split(s, " ")
-}
-
-// shows all files and directory's in a path
-func showContent(dir *string) error {
-	files, err := ioutil.ReadDir(*dir)
-	fmt.Println("gobash> showing files")
-	for _, v := range files {
-		if v.IsDir() {
-			color.Blue("%v", v.Name())
-		} else {
-			color.Green("%v", v.Name())
-		}
-	}
-	return err
 }
 
 // set active working directory
@@ -82,29 +66,4 @@ func buildPath(max int, dir *string) string {
 		tmp += v + "/"
 	}
 	return tmp
-}
-
-// checks if a given file exists, file may be removed or changed between checking and returning
-func checkExistence(s string, dir *string) bool {
-	fileInfo, err := os.Stat(*dir + "/" + s)
-	if err != nil && fileInfo.IsDir() {
-		return false
-	}
-	return true
-}
-
-// shows information about the commands and how to use them
-func showHelp(s string) {
-	var commands = setHelpCommands()
-	fmt.Println("gobash> showing help")
-	switch s {
-	case "all":
-		color.Green("%v\n", commands["help"])
-		color.Green("%v\n", commands["cd"])
-		color.Green("%v\n", commands["ls"])
-		color.Green("%v\n", commands["exec"])
-		color.Green("%v\n", commands["exit"])
-	default:
-		color.Red("help command unrecognized")
-	}
 }
