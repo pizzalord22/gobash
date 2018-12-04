@@ -2,8 +2,8 @@ package main
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
-	"log"
 	"os"
 	"path/filepath"
 	"strings"
@@ -18,6 +18,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	err = errors.New("test error")
+	CheckError(err)
+	return
 	dir := strings.Replace(filepath.Dir(ex), "\\", "/", -1)
 	fmt.Printf("%v>", dir)
 	osLoop(reader, &dir)
@@ -59,9 +62,7 @@ func osLoop(reader *bufio.Reader, dir *string) {
 		default:
 			fmt.Printf("gobash> Type \"help\" to see a list of available commands\n")
 		}
-		if err != nil {
-			log.Println(err)
-		}
+		CheckError(err)
 		fmt.Printf("%v>", *dir)
 	}
 }

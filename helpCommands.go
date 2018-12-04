@@ -35,7 +35,7 @@ func setHelpCommands() map[string]string {
 	hc["help"] = "help\n----------\nshows this help window\n"
 	hc["cd"] = "cd\n----------\nuse cd file/dir to go to a directory, use ../ to go up a file\n"
 	hc["ls"] = "ls\n----------\nlist all files and directories in current path\n"
-	hc["exec"] = "ls\n----------\nuse this just like how you would use a command line\n"
-	hc["exit"] = "exit\n----------\nexits the simulated\n"
+	hc["exec"] = "ls\n----------\nthis allows you to execute commands on the underlying os that gobash runs on.\nMeaning you can use native linux/mac and windows command and get their output\n"
+	hc["exit"] = "exit\n----------\nNicely exits the simulated\n"
 	return hc
 }

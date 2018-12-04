@@ -45,7 +45,7 @@ func dirUp(s string, dir *string) {
 	*dir = buildPath(max-up, dir)
 }
 
-// move down the directory's
+// move down the dirtodoectory's
 func dirDown(s string, dir *string) {
 	if checkExistence(s, dir) {
 		*dir += "/" + s
