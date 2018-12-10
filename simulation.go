@@ -22,6 +22,8 @@ func setDir(s string, dir *string) {
 	if len(s) < 1 {
 		return
 	}
+	// TODO: call the function that can go up and down so we can go to paths properly
+	// example: ../bin/start would no go up 1 directory and then stop
 	if strings.Contains(s, "../") || strings.Contains(s, "..") {
 		dirUp(s, dir)
 	} else {
@@ -67,3 +69,5 @@ func buildPath(max int, dir *string) string {
 	}
 	return tmp
 }
+
+// TODO: add function so we can use .. or ../ when using the cd command

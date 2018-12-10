@@ -30,6 +30,7 @@ func showHelp(s string) {
 }
 
 // set the text to show when the help command is ran
+// TODO: add all missing commands that are in the os loop
 func setHelpCommands() map[string]string {
 	var hc = make(map[string]string)
 	hc["help"] = "help\n----------\nshows this help window\n"

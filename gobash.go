@@ -20,13 +20,14 @@ func main() {
 	}
 	err = errors.New("test error")
 	CheckError(err)
+	// TODO: remove the return when done testing
 	return
 	dir := strings.Replace(filepath.Dir(ex), "\\", "/", -1)
 	fmt.Printf("%v>", dir)
 	osLoop(reader, &dir)
 }
 
-// this stimulates an os loop
+// this simulates an os loop
 func osLoop(reader *bufio.Reader, dir *string) {
 	var err error
 	for {
