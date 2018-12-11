@@ -2,11 +2,6 @@ add a single file with functions dedicated to error handling and mitigation
 setup a proper logging system
 add a single file with function dedicated to logging
 pass all errors back to the osLoop function when possible, to prevent over checking for errors
-
+save data like: os, text editor etc locally
 show simulation stats on a local webserver
-
-
-
-
-
 extra, look up unix and windows commands that would be nice to implement

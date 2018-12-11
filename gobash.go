@@ -2,11 +2,11 @@ package main
 
 import (
 	"bufio"
-	"errors"
 	"fmt"
 	"os"
 	"path/filepath"
 	"strings"
+	"time"
 )
 
 const bufferSize = 100
@@ -16,12 +16,12 @@ func main() {
 	reader := bufio.NewReader(os.Stdin)
 	ex, err := os.Executable()
 	if err != nil {
-		panic(err)
+		fmt.Println(err)
+		fmt.Println("exiting the simulation in 5 seonds")
+		time.Sleep(5 * time.Second)
+		return
 	}
-	err = errors.New("test error")
 	CheckError(err)
-	// TODO: remove the return when done testing
-	return
 	dir := strings.Replace(filepath.Dir(ex), "\\", "/", -1)
 	fmt.Printf("%v>", dir)
 	osLoop(reader, &dir)
