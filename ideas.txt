@@ -5,3 +5,5 @@ pass all errors back to the osLoop function when possible, to prevent over check
 save data like: os, text editor etc locally
 show simulation stats on a local webserver
 extra, look up unix and windows commands that would be nice to implement
+add error codes
+separate errors that the user sees and errors that the system sees

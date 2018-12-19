@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-// instead of creating a webs server create things like a ping command
+// TODO: instead of creating a webs server create things like a ping command
 
 // startwebserver creates a http web server based on the input given
 // the first argument will be the port used

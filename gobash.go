@@ -52,11 +52,11 @@ func osLoop(reader *bufio.Reader, dir *string) {
 			} else {
 				showHelp("exec")
 			}
-		case "comb":
+		case "cat":
 			if len(r) > 2 {
-				comb(r[1], r[2], r[3])
+				cat(r[1], r[2], r[3])
 			} else {
-				showHelp("comb")
+				showHelp("cat")
 			}
 		case "webdog":
 			execute([]string{"start", "chrome.exe", "mydogchase.com"})

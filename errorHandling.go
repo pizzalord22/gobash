@@ -5,6 +5,14 @@ import (
 	"log"
 )
 
+
+const (
+	err1 = "Can not open file"
+	err2 = "Can not read file"
+	err3 = "Can not create file"
+	err4 = "Can not write to file"
+)
+
 // takes at least 1 error as argument
 // it can also take 0 or more strings as additional info
 func CheckError(err error, args ...string) {
@@ -16,3 +24,4 @@ func CheckError(err error, args ...string) {
 		}
 	}
 }
+
