@@ -1,0 +1,5 @@
+logPath: "./logs/"
+logName: "gobash log"
+logSize: 50
+maxBackUps: 3
+MaxAge: 28
