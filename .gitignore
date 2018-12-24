@@ -1,3 +1,5 @@
 /.idea
 gobash.exe
-settings.yaml
+gobash
+defaults.yaml
+/logs

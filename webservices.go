@@ -25,7 +25,6 @@ func startwebserver(args ...string) {
 }
 
 func defaultserver() *mux.Router {
-	// create handlefuncs that use file servers to serve specific files from specific paths
 	router := mux.NewRouter()
 	htmlServer := http.FileServer(http.Dir("/html/"))
 	jsServer := http.FileServer(http.Dir("/js/"))

@@ -7,3 +7,9 @@ show simulation stats on a local webserver
 extra, look up unix and windows commands that would be nice to implement
 add error codes
 separate errors that the user sees and errors that the system sees
+improve help function display
+
+######
+#name#
+######
+#description
