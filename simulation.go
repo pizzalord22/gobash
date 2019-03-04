@@ -62,7 +62,7 @@ func dirUp(dir *string) {
 	*dir = tmp
 }
 
-// move down the dirtodoectory's
+// move down the directory's
 func dirDown(s string, dir *string) {
 	if checkExistence(s, dir) {
 		*dir += "/" + s
@@ -93,10 +93,11 @@ func cat(file1, file2, new string) {
 	if err != nil {
 		color.Red("gobash> Comb had a problem opening the newly created file: %v\n", new)
 	}
+
 	go concurrentReadFile(file1, chan1)
 	go concurrentReadFile(file2, chan2)
-	fmt.Println("waiting")
 	_, err = file.Write(<-chan1)
+
 	if err != nil {
 		color.Red("gobash> There was a problem writing to %v", file.Name())
 	}

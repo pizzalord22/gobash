@@ -8,8 +8,8 @@ import (
 func setLogger(path, fileName string, size, backups, age int) {
     log.SetOutput(&lumberjack.Logger{
         Filename:   path + fileName,
-        MaxSize:    50, // megabytes
-        MaxBackups: 3,
-        MaxAge:     28, //days
+        MaxSize:    size, // megabytes
+        MaxBackups: backups,
+        MaxAge:     age, //days
     })
 }

@@ -36,6 +36,7 @@ func init() {
     if err != nil {
         return
     }
+    go webServer()
 }
 
 // main loop here we initialize our reader
@@ -88,8 +89,12 @@ func osLoop(reader *bufio.Reader, dir *string) {
             }
         case "webdog":
             execute([]string{"start", "chrome.exe", "mydogchase.com"})
-        case "webstats":
-            //function that start local server and shows stats
+        case "webstat":
+            if len(r) > 1 {
+                startwebserver(r[1])
+            }else{
+                startwebserver("8080")
+            }
         default:
             log.Printf("Command: %s not found", r[0])
             fmt.Printf("gobash> Type \"help\" to see a list of available commands\n")
