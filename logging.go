@@ -5,10 +5,10 @@ import (
     "log"
 )
 
-func setLogger(path, fileName string, size, backups, age int) {
+func setLogger(path, fileName string, backups, age int) {
     log.SetOutput(&lumberjack.Logger{
         Filename:   path + fileName,
-        MaxSize:    size, // megabytes
+        MaxSize:    5, // megabytes
         MaxBackups: backups,
         MaxAge:     age, //days
     })
