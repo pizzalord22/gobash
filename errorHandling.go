@@ -8,10 +8,10 @@ import (
 
 // declare error constants
 const (
-	err1 = "Can not open file"
-	err2 = "Can not read file"
-	err3 = "Can not create file"
-	err4 = "Can not write to file"
+	errOpenFile = "Can not open file"
+	errReadFile = "Can not read file"
+	errCreateFile = "Can not create file"
+	errWriteFile = "Can not write to file"
 )
 
 // takes at least 1 error as argument
