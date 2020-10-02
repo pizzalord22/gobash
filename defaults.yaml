@@ -1,5 +1,5 @@
-logPath: "./logs/"
-logName: "gobash.log"
-logSize: 50
-maxBackUps: 3
-MaxAge: 28
+logPath: "./logs/"      # log in the executable folder by default
+logName: "go_bash.log"  # default log file name 
+logSize: 5              # max log file size in MB
+maxBackUps: 3           # maximum amount of backups
+MaxAge: 28              # maximum log file age in days
