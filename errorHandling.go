@@ -6,6 +6,7 @@ import (
 )
 
 
+// declare error constants
 const (
 	err1 = "Can not open file"
 	err2 = "Can not read file"
