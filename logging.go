@@ -2,6 +2,7 @@ package main
 
 import (
     "gopkg.in/natefinch/lumberjack.v2"
+    "github.com/Sirupsen/logrus"
     "log"
 )
 
@@ -14,3 +15,8 @@ func setLogger(path, fileName string, backups, age int) {
         MaxAge:     age, //days
     })
 }
+
+// todo switch to logrus: https://github.com/Sirupsen/logrus
+//  the logrus library uses multiple logging errors to indicates severties this should be implemented together with the error struct
+
+var logger = logrus.NewLogger()
