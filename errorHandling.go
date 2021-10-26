@@ -5,6 +5,14 @@ import (
 	"log"
 )
 
+// error struct used to report errors
+type goBashError struct{
+	err string
+	path string
+	command string
+	code string
+}
+
 
 // declare error constants
 const (
