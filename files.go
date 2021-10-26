@@ -24,13 +24,13 @@ func readFile(filename string) ([]byte, error) {
 }
 
 // this function should be used to read multiple files concurrently
-func concurrentReadFile(filename string, tchan chan []byte) {
+func concurrentReadFile(filename string, readChan chan []byte) {
     bytes, err := readFile(filename)
     if err != nil {
         color.Red("gobash> error: %v", errors.Wrap(err, fmt.Sprintf("error while readind the file %s: ", filename)))
-        tchan <- []byte(fmt.Sprintf("Failed to read file: %s", filename))
+        readChan <- []byte(fmt.Sprintf("Failed to read file: %s", filename))
     }
-    tchan <- bytes
+    readChan <- bytes
     return
 }
 
