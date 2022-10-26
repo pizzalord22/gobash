@@ -13,6 +13,7 @@ import (
 
 var startStop = make(chan string)
 
+// start a webserver
 func webServer() {
     srv := &http.Server{
         Addr:         fmt.Sprintf("0.0.0.0:%s", "8080"),
