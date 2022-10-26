@@ -5,6 +5,7 @@ import (
     "log"
 )
 
+// setup the logger
 func setLogger(path, fileName string, backups, age int) {
     log.SetOutput(&lumberjack.Logger{
         Filename:   path + fileName,
